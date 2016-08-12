@@ -48,9 +48,9 @@
   });
 
   // Redirect page
-  FB.Event.subscribe('auth.login', function(){
-    window.location.href = 'page1.php';
-  });
+  //FB.Event.subscribe('auth.login', function(){
+  //  window.location.href = 'page1.php';
+  //});
 
   // Now that we've initialized the JavaScript SDK, we call 
   // FB.getLoginStatus().  This function gets the state of the
