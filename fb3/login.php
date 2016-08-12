@@ -40,11 +40,16 @@
 
   window.fbAsyncInit = function() {
   FB.init({
-    appId      : '{your-app-id}',
+    appId      : '529985337202053',
     cookie     : true,  // enable cookies to allow the server to access 
                         // the session
     xfbml      : true,  // parse social plugins on this page
     version    : 'v2.5' // use graph api version 2.5
+  });
+
+  // Redirect page
+  FB.Event.subscribe('auth.login', function(){
+    window.location.href = 'page1.php';
   });
 
   // Now that we've initialized the JavaScript SDK, we call 
@@ -78,10 +83,10 @@
   // successful.  See statusChangeCallback() for when this call is made.
   function testAPI() {
     console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me', function(response) {
+    FB.api('/me?fields=name,first_name,last_name,email', function(response) {
       console.log('Successful login for: ' + response.name);
       document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + '!';
+        'Thanks for logging in, ' + response.email + '!';
     });
   }
 </script>
