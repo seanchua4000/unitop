@@ -1,7 +1,7 @@
 <?php
 require_once 'index.php';
 if(isset($_SESSION['facebook_access_token'])){
-  echo $profile['email'];
+  echo '<br>'. $profile['email'];
   }
 ?>
 <!DOCTYPE html>

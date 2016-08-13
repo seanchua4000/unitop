@@ -58,11 +58,12 @@ if (isset($accessToken)) {
     echo 'Facebook SDK returned an error: ' . $e->getMessage();
     exit;
   }
-  	echo 'user logged in';
+  	echo 'User is Logged';
     // Now you can redirect to another page and use the access token from $_SESSION['facebook_access_token']
 } else {
   // replace your website URL same as added in the developers.facebook.com/apps e.g. if you used http instead of https and you used non-www version or www version of your website then you must add the same here
-  $loginUrl = $helper->getLoginUrl('http://www.wagsc.com/fb2/index.php', $permissions);
+  //$loginUrl = $helper->getLoginUrl('http://www.wagsc.com/fb2/index.php', $permissions);
+  $loginUrl = $helper->getLoginUrl('http://localhost/unitop2/fb2/index.php', $permissions);
 
   echo '<a href="' . $loginUrl . '">Log in with Facebook!</a>';
 }
